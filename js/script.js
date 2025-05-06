@@ -34,17 +34,9 @@
     }
     //Solicitamos el producto al usuario// 
 
-    //Maxi: que tendria que poner despues de las llaves del while?//
 
-    while (carritoVacio) {
-      
-      ("Ingrese el producto que desea agregar al carrito");
-
-    }
-      cantidadProductos++;
-    alert("Producto agregado al carrito");
     //Agregar el producto al carrito//
-    carritoVacio.push(productos({id: 4, nombre: "juego de 6 platos hondos", precio: 25000})); 
+    carritoVacio.push(productos[3].nombre); 
     //Verificamos si el carrito esta lleno//
     return carritoVacio;
 
