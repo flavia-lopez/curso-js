@@ -2,14 +2,13 @@
 //SIMULADOR CARRITO DE COMPRAS//
   //Declaramos variables y constantes//
   //Variables globales//
-  const Max_Productos = 10;
-  //Arrays vacio//
-  let carrito_vacio = [];
+  const maxProductos = 10;
+  let carritoVacio = [];
   //Variables para el total y la cantidad de productos//
   let total = 0;
-  let cantidad_productos = 0;
+  let cantidadProductos = 0;
 
-  let Productos = [
+  let productos = [
     { id:1, nombre: "Ensaladera de ceramica", precio: 15000},
     { id:2, nombre: "Bandeja de ceramica", precio: 10000},
     { id:3, nombre: "Taza de ceramica", precio: 6000},
@@ -25,21 +24,29 @@
 
   //Declaramos funciones//
 
-  function agregarProducto(carrito_vacio) {
-    if (cantidad_productos >= Max_Productos) {
+  function agregarProducto(carritoVacio) {
+    if (cantidadProductos >= maxProductos) {
       alert("Limite de productos alcanzado");
       return;
+    }else if (carritoVacio.length ===0) {
+      alert("El carrito esta vacio");
+      return;
     }
-   
-    while (carrito_vacio === undefined) {
-      let carrito_vacio = prompt("Ingrese el producto que desea agregar al carrito");
+    //Solicitamos el producto al usuario// 
+
+    //Maxi: que tendria que poner despues de las llaves del while?//
+
+    while (carritoVacio) {
+      
+      ("Ingrese el producto que desea agregar al carrito");
 
     }
-    cantidad_productos++;
+      cantidadProductos++;
     alert("Producto agregado al carrito");
     //Agregar el producto al carrito//
-    carrito_vacio.push(Productos[id3]);
-    return carrito_vacio;
+    carritoVacio.push(productos({id: 4, nombre: "juego de 6 platos hondos", precio: 25000})); 
+    //Verificamos si el carrito esta lleno//
+    return carritoVacio;
 
 
 
@@ -47,22 +54,22 @@
     }
 
     //Invocamos la funcion agregarProducto//
-    agregarProducto(carrito_vacio);
+    agregarProducto(carritoVacio);
 
-    console.log(agregarProducto);
+    console.log(agregarProducto(carritoVacio));
 
 
 
 
     function listarProductos() {
-      if(carrito_vacio.length === 0) {
+      if(carritoVacio.length === 0) {
         alert("El carrito esta vacio");
         return;
       }
       let lista = "productos en el carrito: \n";
 
-      for (let i=1; i <= carrito_vacio.length; i++) {
-      //declararmos un array //
+      for (let i=1; i <= carritoVacio.length; i++) {
+      //declaramos un array //
       }
     }
 
