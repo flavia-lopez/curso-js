@@ -21,9 +21,6 @@
     { id:10,nombre: "juego de 6 platos de postre", precio: 15000},
   ]
 
-  for (let i in productos) {
-    console.log(productos[i])
-  }
 console.log(productos);
 
   //Declaramos funciones//
@@ -31,24 +28,29 @@ console.log(productos);
   function agregarProducto(carritoVacio) {
     if (cantidadProductos >= maxProductos) {
       alert("Limite de productos alcanzado");
-      return;
-    }else if (carritoVacio.length ===0) {
-      alert("El carrito esta vacio");
-      return;
+      return carritoVacio;
     }
+
+    let tablero = " ";
+
+    for (let i in productos) {
+      const nombreProducto = productos[i].nombre;
+      const idProducto = productos[i].id;
+
+      tablero += idProducto + " - " + nombreProducto + "\n";
+
+      alert(tablero);
+
+
+    }
+    
+
+    //Agregar el producto al carrito
+    //carritoVacio.push({id:3, nombre: "Taza de ceramica", precio: 6000});
+    //carritoVacio.push({id:8, nombre: "portautensilios de cocina", precio: 8000});
+    //console.log(carritoVacio);//
   
-
-    //Agregar el producto al carrito//
-    carritoVacio.push({id:3, nombre: "Taza de ceramica", precio: 6000});
-    carritoVacio.push({id:8, nombre: "portautensilios de cocina", precio: 8000});
-    console.log(carritoVacio);
-
- 
-
-
-
   }
-  
 
     //Verificamos si el carrito esta lleno//
     //return carritoVacio;//
@@ -57,7 +59,7 @@ console.log(productos);
 
   
     //invocamos la funcion agregarProducto
-   // agregarProducto(carritoVacio);//
+   agregarProducto(carritoVacio);
 
     //console.log(agregarProducto(carritoVacio));//
 
@@ -71,15 +73,15 @@ console.log(productos);
       }
       let lista = "productos en el carrito: \n";
 
-      for (let i=1; i <= carritoVacio.length; i++) {
+      for (let i = 1; i <= carritoVacio.length; i++) {
       //declaramos un array //
       }
     }
 
 
     //Invocamos la funcion listarProductos//
-    listarProductos();
-    console.log(listarProductos);
+    //listarProductos();
+    //console.log(listarProductos);
 
     //Funciones para eliminar producto, calcular total, finalizar compra//
 
@@ -89,3 +91,21 @@ console.log(productos);
 
     function finalizarCompra() {}
 
+   
+
+    //Funciones constructoras//
+    function Producto(id, nombre, precio) {
+      this.id = id;
+      this.nombre = nombre;
+      this.precio = precio;
+
+      this.descripcion = function() {
+        console.log("El producto es: ", this.nombre + " y su precio es: " + this.precio);
+
+      }
+    }
+
+    let producto1 = new producto1(1, "Ensaladera de ceramica", 15000);
+    console.log(producto1.precio);
+
+    producto1.descripcion();
