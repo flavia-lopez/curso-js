@@ -18,9 +18,13 @@
     { id:7, nombre: "portasahumerio-hoja", precio: 5000},
     { id:8, nombre: "portautensilios de cocina", precio: 8000},
     { id:9, nombre: "posa vasos", precio: 3000},
-    { id:10, nombre: "juego de 6 platos de postre", precio: 15000},
+    { id:10,nombre: "juego de 6 platos de postre", precio: 15000},
   ]
 
+  for (let i in productos) {
+    console.log(productos[i])
+  }
+console.log(productos);
 
   //Declaramos funciones//
 
@@ -32,23 +36,30 @@
       alert("El carrito esta vacio");
       return;
     }
-    //Solicitamos el producto al usuario// 
-
+  
 
     //Agregar el producto al carrito//
-    carritoVacio.push(productos[3].nombre); 
+    carritoVacio.push({id:3, nombre: "Taza de ceramica", precio: 6000});
+    carritoVacio.push({id:8, nombre: "portautensilios de cocina", precio: 8000});
+    console.log(carritoVacio);
+
+ 
+
+
+
+  }
+  
+
     //Verificamos si el carrito esta lleno//
-    return carritoVacio;
+    //return carritoVacio;//
 
 
 
   
-    }
+    //invocamos la funcion agregarProducto
+   // agregarProducto(carritoVacio);//
 
-    //Invocamos la funcion agregarProducto//
-    agregarProducto(carritoVacio);
-
-    console.log(agregarProducto(carritoVacio));
+    //console.log(agregarProducto(carritoVacio));//
 
 
 
