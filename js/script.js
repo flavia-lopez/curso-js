@@ -39,18 +39,24 @@ console.log(productos);
 
       tablero += idProducto + " - " + nombreProducto + "\n";
 
-      alert(tablero);
-
-
-    }
-    
-
-    //Agregar el producto al carrito
-    //carritoVacio.push({id:3, nombre: "Taza de ceramica", precio: 6000});
-    //carritoVacio.push({id:8, nombre: "portautensilios de cocina", precio: 8000});
-    //console.log(carritoVacio);//
   
-  }
+    }
+    alert(tablero);
+
+    let pregunta 
+    do{
+      pregunta = prompt("Ingrese el id del producto que desea agregar al carrito")
+      for (let i = 0; i < productos.length; i ++){
+        if (productos[i].id === pregunta){
+          carritoVacio.push(producto[i])
+      }
+      }
+  
+    }while(pregunta);
+    console.log(carritoVacio);
+     }
+
+
 
     //Verificamos si el carrito esta lleno//
     //return carritoVacio;//
@@ -66,17 +72,17 @@ console.log(productos);
 
 
 
-    function listarProductos() {
-      if(carritoVacio.length === 0) {
-        alert("El carrito esta vacio");
-        return;
-      }
-      let lista = "productos en el carrito: \n";
+   // function listarProductos() {
+    //  if(carritoVacio.length === 0) {
+     //   alert("El carrito esta vacio");
+     //   return;
+      //}
+      //let lista = "productos en el carrito: \n";
 
-      for (let i = 1; i <= carritoVacio.length; i++) {
+      //for (let i = 1; i <= carritoVacio.length; i++) {
       //declaramos un array //
-      }
-    }
+     // }
+    //}
 
 
     //Invocamos la funcion listarProductos//
@@ -94,18 +100,18 @@ console.log(productos);
    
 
     //Funciones constructoras//
-    function Producto(id, nombre, precio) {
-      this.id = id;
-      this.nombre = nombre;
-      this.precio = precio;
+    //function Producto(id, nombre, precio) {
+     // this.id = id;
+     // this.nombre = nombre;
+     // this.precio = precio;
 
-      this.descripcion = function() {
-        console.log("El producto es: ", this.nombre + " y su precio es: " + this.precio);
+      //this.descripcion = function() {
+     //   console.log("El producto es: ", this.nombre + " y su precio es: " + this.precio);
 
-      }
-    }
+      
+    
 
-    let producto1 = new producto1(1, "Ensaladera de ceramica", 15000);
-    console.log(producto1.precio);
+   // let producto1 = new producto1(1, "Ensaladera de ceramica", 15000);
+    //console.log(producto1.precio);
 
-    producto1.descripcion();
+    //producto1.descripcion();//
