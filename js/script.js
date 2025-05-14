@@ -45,21 +45,16 @@ console.log(productos);
 
     let pregunta 
     do{
-      pregunta = prompt("Ingrese el id del producto que desea agregar al carrito")
+      pregunta = Number(prompt("Ingrese el id del producto que desea agregar al carrito"))
       for (let i = 0; i < productos.length; i ++){
         if (productos[i].id === pregunta){
-          carritoVacio.push(producto[i])
+          carritoVacio.push(productos[i])
       }
       }
-  
-    }while(pregunta);
+    } while (isNaN (pregunta));
     console.log(carritoVacio);
-     }
-
-
-
-    //Verificamos si el carrito esta lleno//
-    //return carritoVacio;//
+  }
+     
 
 
 
@@ -67,7 +62,7 @@ console.log(productos);
     //invocamos la funcion agregarProducto
    agregarProducto(carritoVacio);
 
-    //console.log(agregarProducto(carritoVacio));//
+   console.log(agregarProducto(carritoVacio));
 
 
 
@@ -93,7 +88,11 @@ console.log(productos);
 
     function eliminarProducto() {}
 
-    function calcularTotal() {}
+    function calcularTotal(carritoVacio) {
+      const total = carritoVacio.reduce((acum, producto) => acum + producto.precio, 0);
+      alert("El total de su compra es: ", total);
+      return total;
+    }
 
     function finalizarCompra() {}
 
@@ -114,4 +113,4 @@ console.log(productos);
    // let producto1 = new producto1(1, "Ensaladera de ceramica", 15000);
     //console.log(producto1.precio);
 
-    //producto1.descripcion();//
+    //producto1.descripcion();
